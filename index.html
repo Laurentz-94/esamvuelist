@@ -1,0 +1,41 @@
+
+<html>
+    <script src="node_modules/jquery/jquery.js"></script>
+    <script src="node_modules/popper.js/dist/popper.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="node_modules/vue-resource/dist/vue-resource.js"></script>
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+    <body>
+
+        <div id='app'>
+
+           
+            <input v-model="name" placeholder="name"> 
+            <input v-model="description" placeholder="description"> 
+            <input v-model="assignedTo" placeholder="assignedTo"> 
+            <button v-on:click="addToDo">Aggiungi</button>
+            
+            <input v-model="assignedTo" placeholder="assignedTo">
+            <button v-on:click="getToDoByUser">Visualizza Utente</button>          
+            
+            <input v-model="id" placeholder="id">
+            <button v-on:click="deleteToDoById">Elimina</button>
+            
+            <button v-on:click="getToDo">Visualizza</button>
+
+            <div class="row list-group" v-for="todo in todos">
+              <div class="list-group-item">
+                <div class="column">id: {{ todo.id }}</div>
+                <div class="column">name: {{ todo.name }}</div>
+                <div class="column">description: {{ todo.description }}</div>
+                <div class="column">completed: {{ todo.completed }}</div>
+                <div class="column">assignedTo: {{ todo.assignedTo }}</div>
+              </div>
+            </div>
+
+        </div>
+                        
+    </body>
+    <script src="./app.js"></script>
+</html>
